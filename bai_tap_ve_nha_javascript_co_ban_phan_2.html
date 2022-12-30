@@ -3,8 +3,15 @@
 	<head><title>bài tập về nhà javascript 2</title></head>
 	<body>
 		<h3>nhập số phút để chuyển sang đổi sang số giây</h3>
+		<!-- Nhập dữ liệu đầu vào -->
 		<input id="phut" type="number"></input>    
+		<!-- tạo nút click để thực hiện hàm chuyển đổi -->
 		<button type="button" onclick="sogiay()">hiển thị giây</button>
+		<h3>nhập số </h3>
+		<!-- Nhập dữ liệu đầu vào -->
+		<input id="sodauvao" type="number"></input>    
+		<!-- tạo nút click để thực hiện hàm chuyển đổi -->
+		<button type="button" onclick="sotieptheo()">hiển thị số tiếp theo</button>
 		<script>
 			// 1.	Viết hàm thực hiện tính tích của 3 số:
 			// VD: tích của 1, 2 ,3 = 6
@@ -59,9 +66,17 @@
 				alert(sophut.value + " phút bằng " + giay +"s");
 
 			}
+			// 4.	Viết hàm trả về số kế tiếp của số hiện tại
+			// VD: số hiện tại = 1, thì số kế tiếp = 2
+			function sotieptheo() {
+				let sodauvao1 = document.getElementById('sodauvao');
+				let hienthisotieptheo = sodauvao1.value; hienthisotieptheo++
+				console.log('số tiếp theo là: ' + hienthisotieptheo);
+				alert('số tiếp theo là: ' + hienthisotieptheo);
+				
+			}
+			// 5.	Viết hàm tính chu vi hình chữ nhật bất kỳ
 			
-
-
 		</script>
 	</body>
 

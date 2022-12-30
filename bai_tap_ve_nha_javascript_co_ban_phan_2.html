@@ -8,10 +8,17 @@
 		<!-- tạo nút click để thực hiện hàm chuyển đổi -->
 		<button type="button" onclick="sogiay()">hiển thị giây</button>
 		<h3>nhập số </h3>
-		<!-- Nhập dữ liệu đầu vào -->
 		<input id="sodauvao" type="number"></input>    
-		<!-- tạo nút click để thực hiện hàm chuyển đổi -->
 		<button type="button" onclick="sotieptheo()">hiển thị số tiếp theo</button>
+		<h3>nhập chiều dài hình chữ nhật </h3>
+		<input id="chieudai" type="number"></input>    		
+		<h3>nhập chiều rộng hình chữ nhật </h3>
+		<input id="chieurong" type="number"></input>    
+		<button type="button" onclick="chuvihcn()">chu vi hình chữ nhật</button><button type="button" onclick="dientichhcn()">diện tích hình chữ nhật</button>
+		<h3>độ dài cạnh hình vuông</h3>
+		<input id="canhhinhvuong" type="number"></input>    
+		<button type="button" onclick="chuvihv()">chu vi hình vuông</button>    
+		<button type="button" onclick="dientichhv()">diện tích hình vuông</button>
 		<script>
 			// 1.	Viết hàm thực hiện tính tích của 3 số:
 			// VD: tích của 1, 2 ,3 = 6
@@ -76,8 +83,48 @@
 				
 			}
 			// 5.	Viết hàm tính chu vi hình chữ nhật bất kỳ
+			function chuvihcn() { 
+				let chieudaihcn = document.getElementById('chieudai');
+				let chieudaihcn1 = chieudaihcn.value * 1; //chỗ này em chưa rõ lắm
+				let chieuronghcn = document.getElementById('chieurong');
+				let chieuronghcn1 = chieuronghcn.value * 1;
+				let chuvihcn1 = (chieudaihcn1 + chieuronghcn1) * 2;
+				console.log('chiều dài hình chữ nhặt = '+chieudaihcn1);
+				console.log('chiều rộng hình chữ nhật = '+chieuronghcn1);
+				console.log('chu vi của hình chữ nhật bằng : ' + chuvihcn1);
+				alert('chu vi của hình chữ nhật bằng : ' + chuvihcn1);
+			}
+			// 6. Viết hàm tích diện tích hình chữ nhật
+			function dientichhcn(){
+				let chieudaihcn = document.getElementById('chieudai');
+				let chieudaihcn1 = chieudaihcn.value * 1; 
+				let chieuronghcn = document.getElementById('chieurong');
+				let chieuronghcn1 = chieuronghcn.value * 1;
+				let dientichhcn1 = chieudaihcn1 * chieuronghcn1;
+				console.log('chiều dài hình chữ nhật = '+chieudaihcn1);
+				console.log('chiều rộng hình chữ nhật = '+chieuronghcn1);
+				console.log('diện tích của hình chữ nhật bằng : ' + dientichhcn1);
+				alert('diện tích của hình chữ nhật bằng : ' + dientichhcn1);
+			}
+			// 7.	Viết hàm tính chu vi hình vuông bất kỳ
+			function dientichhv(){
+				let canhhv = document.getElementById('canhhinhvuong');
+				let canhhv1 = canhhv.value * 1;
+				let dientichhv1 = canhhv1 * canhhv1;
+				console.log('cạnh hình vuông = '+canhhv1);
+				console.log('diện tích của hình chữ nhật bằng : ' + dientichhv1);
+				alert('diện tích của hình chữ nhật bằng : ' + dientichhv1);
+			}
+			function chuvihv(){
+				let canhhv = document.getElementById('canhhinhvuong');
+				let canhhv1 = canhhv.value * 1;
+				let chuvihv1 = canhhv1 * 4;
+				console.log('cạnh hình vuông = '+canhhv1);
+				console.log('chu vi của hình vuông bằng : ' + chuvihv1);
+				alert('chu vi của hình vuông bằng : ' + chuvihv1);
+			}
+			</script>
 			
-		</script>
 	</body>
 
 </html>

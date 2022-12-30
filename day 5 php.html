@@ -1,0 +1,151 @@
+<!-- js basic 3.htlm -->
+<script>
+	// 1 - toán tử
+	// -toán tử số học
+	// -toán tử so sánh : so sánh toán tử hạng xung quanh => boolean
+	// + So sánh bằng: == ===
+	// khác nhau
+	var number1 = 5;
+	var number2 = 2;
+	// so sánh == chỉ so sánh về giá trị -> ép kiểu
+
+	var is_check = number1 = number2;
+	console.log(is_check); //false
+	// so sánh ====
+	var test1 = 3 == '3'; // true
+	var test2 = 3 === '3'; // fales
+	console.log(test1, test2);
+	// -> === so sánh cả về kiểu dữ liệu, trong khi == thì không
+	// +so sánh khác: !=
+	var test3 = (1 != 3); // true
+	// + So Sánh lớn hơn >
+	var test4 = (1>5); // fales
+	// + So Sánh lớn hơn hoặc bằng: >=
+	var test5 = (5 >= 5); // true
+	// +so sánh nhỏ: <
+	var test5 = (5 < 6); // true
+
+	// + So sánh nhỏ hơn hoặc băng: <=
+	var test5 = (5 <= 5); // true
+
+	// toán tử logic : trong thực tế sẽ có những trường hợp phải kết hợp nhiều điều kiện thì mới ra 1 quyết định -> trả về boolean
+	// + AND &&
+	// true && true = true
+	// true && false = false
+	// false && true = false
+	// false && false = false
+	var check = (1 > 0) && (1 <= 1); // true && true = true
+
+	// + OR ||
+	// true || true = true
+	var check = (1 > 0) || (1 <= 1); // true || true = true
+	// true || false
+	// false || true =true
+	// false || false
+
+	// + NOT !
+	// !true = false
+	// !false = true
+	var check = !(1 < 0); // true
+	// -toán tử gán giá trị bên phải toán tử cho bên trái
+	// +toán tử gán =
+	var number =5;
+	// + Cộng tích lũy : +=
+	number +=2; // number =number +2 =7
+	number -= 4; // 3
+	// + nhân *=
+	// + chia /=
+	// + chia lấy dư %=
+	// - Cần chú ý toán tử gán = và toán tử so sánh ==
+
+	// 2- Câu Lênh điều kiện:kiểm tra logic của 1 hành động, thực thi theo hành động đúng
+
+	// + If : 3 từ khóa if  elseif else
+	// a/ chỉ dùng if: dùng cho 1 case duy nhất:
+	if(5 > 0); {
+		console.log('số 5 lớn hơn số 0');
+	}
+	// b/ dùng if else: dùng cho 2 case:
+	if (5 >= 5) {
+		console.log('số 5 >= 5');
+	} else {
+		console.log('biểu thức trả về false');
+	}
+	// c/ dùng if elseif else : >= 3 trường hợp
+	var point = 7;
+	if (point >=8 && point <= 10) {
+		console.log('giỏi');
+	}else if (point >= 6.5 && point < 8) {
+		console.log("khá")
+	}else if (point >= 5 && point < 6.5) {
+		console.log("tb")
+	}
+	else {
+		console.log('yếu');
+	}
+	// +switch case: dùng thay thế if khi >= 3 case
+	// viết băng if:
+	var day = 3;
+	if (day == 0){
+		console.log('CN');
+	}else if (day == 2){
+		console.log('thứ 2');
+	}else if (day == 3) {
+		console.log('thứ 3');
+	}else {
+		console.log('không phải cn, thứ 2, thứ 3');
+	}
+	// viết với switch case
+	switch (day){
+	case 0: console.log('CN'); break;
+	case 2: console.log('thứ 2');break;
+	case 3: console.log('thứ 3');break;
+	default: console.log('không phải CN, t2,t3');
+	}
+	// switch chỉ dùng cho so sánh bằng 
+	// 3 - Vòng lặp for , while, do...while
+	// +lặp đi lặp lại 1 hành động nào đó
+	// vd: log ra 500 lần đoạn text ' 500 ae'
+	// - for: vòng lặp xác định trc số lần lặp
+	// khởi tạo biến lặp
+	// điều kiện lặp
+	// thay đổi biến lặp ban đầu , để tới 1 thời điểm lặp nào đó sẽ làm cho điều kiện lặp bị sai -> thoát được vòng lặp
+	for (var i = 1; i <= 10; i++){
+		console.log(i);
+	}
+// 12345678910
+	// -> cần tránh vòng lặp vô hạn
+	// - while: vòng lặp ko xác định
+	var j = 1;
+	while ( j <= 10){
+		console.log(j);
+		j++;
+	}
+// 12345678910
+	// -do...while: chạy ít nhất 1 lần cho dù điều kiện bị sai ngay từ đầu
+	do {
+		console.log('test');
+	}while (2 < 0);
+// 4- từ khóa break, continue trong vòng lặp
+	// + dùng can thiệp vào quy trình lặp
+	// - break: thoát hẳn vòng lặp, thoát hẳn không chạy code sau code
+	for (var i =1; i <= 10; i++){
+		console.log(i);
+	}
+	// 
+	for (var i =1; i <= 10; i++){
+		if (i == 5){
+			break;
+		}
+		console.log(i);
+	// 12345
+	// continue:bỏ qua vòng lặp hiện tại nhảy tiếp tới vòng lặp kế tiếp;không chạy code sau continue và chạy vòng lặp mới kế tiếp
+		for (var i = 1; i <= 10; i++){
+			if (i == 2) {
+				continue;
+			}
+			console.log(i)
+		}
+// 1345678910
+		
+</script>

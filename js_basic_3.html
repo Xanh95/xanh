@@ -1,0 +1,40 @@
+<!-- js_basic_3.html -->
+<script>
+	// 1- toán tử: dùng để tính toán toán hạng xng quanh nó
+
+	//  3 + 5 =8
+	// + cộng +
+	var number1 = 5;
+	var number2 = 2;
+	var res1 = number2 + number1
+	// + trừ -
+	var res2 = number1 + number2
+	// + nhân *
+	var	res3 = number1 * number2
+	//  + Chia /
+	var res4 = number1 / number2 // 2.5
+	// + chia lấy dư %
+	var res5 = number1 % number2 // 1
+	// + tăng giảm tích lũy 1 đơn vị : ++ --
+	var number = 5;
+	number++;
+	console.log(number);//6
+	// dựa doán kq của biểu thức sau:
+	var x = 5;
+	//  toán tử ++ -- thì phải đi qua biến đó mới bị thay đôi
+	//  ngược lại thì thay đổi luôn trước khi đi qua biến
+	var result = x++ + x++; // 12 13 11
+				// = 5 + 6
+	var y = 5;
+	var result1 = --y + y++; // 9 10 8
+				// = 4 + 4
+	var x = 5;
+	var sum = x++ * ++x + 2 * --x % 2; // 35
+			// = 5 * 7 + 2 * 6 % 2 = 35
+	var x = 5;
+	var sum = x * x - --x * 2 + x++ - x * ++x;
+			// = 5 * 5 -   4 * 2 + 4 - 5 * 6
+			// = 25    -    8    + 4 - 30
+			// = 17              - 26
+			// = -9
+</script> 

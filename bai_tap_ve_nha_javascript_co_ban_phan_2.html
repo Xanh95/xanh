@@ -1,0 +1,31 @@
+<html>
+	<meta charset="utf-8" />
+	<head><title>bài tập về nhà javascript 2</title></head>
+	<body>
+		<script>
+			// 1.	Viết hàm thực hiện tính tích của 3 số:
+			// VD: tích của 1, 2 ,3 = 6
+			function tich(number1, number2, number3) {
+				var nhan = number3 * number1 * number2;
+				console.log('tích = ' + nhan);	
+			}
+			tich(1,2,3);
+			// 2.2.	Viết hàm thực hiện tính toán trên 2 số bất kỳ, phép tính có thể là cộng trừ nhân chia.
+			 // VD: với 2 số 6 và 2, nếu phép tính là cộng thì kết quả bằng 8, nếu phép tính là trừ thì kết quả = 4, nếu phép tính bằng nhân thì kết quả  = 12, nếu kết quả bằng chia thì kết quả = 3
+			var so1 = 2;
+			var so2 = 6;
+			var pheptinh = prompt('thực hiện phép tính giữa 2 và 6(+,-,*,/)');
+			function cong(){
+				var tong = so1 + so2;
+				console.log('Tổng = '+ tong);
+				alert('Tổng = '+ tong);
+			}
+			switch (pheptinh){
+			case '+': cong(); break;
+			}
+			
+
+		</script>
+	</body>
+
+</html>

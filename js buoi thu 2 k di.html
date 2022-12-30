@@ -1,0 +1,149 @@
+<!-- js buoi thu 2 k di -->
+<script>
+	// js_basic@.html
+	// 1- biến :
+	// hiển thị biến ra màn hình
+	var fullname = 'xanh';
+	document.write(fullname);
+	// hàm chuyên debug trong js
+	console.log(fullname);
+	// 2 - Hăng: cũng là 1 cái biến
+	// dùng để lưu trữ giá trị tuy nhiên giá sẽ không bị thay đổi luôn luôn cố định, ko thể gán lại
+	// + Khai báo:
+	const PI = 3.14;
+	const MAX_AGE	 = 130;
+	console.log(PI); //3.14
+	// PI = 123;
+	// 3 - Kiểu dữ liệu: phân loại dữ liệu để có cách xử lý khác nhau
+	// + Kiểu number : là số bao gồm số nguyên và thập phân
+	var number1 = 123;
+	var number2 = 1.23;
+	console.log(typeof number1); // number
+	// + String: chuỗi, được bao bởi nháy đơn '' hoặc kép ""
+	var str1 = 'hello xanh';
+	var str2 = "helo xanh";
+	var test = "123";
+	console.log(typeof str1);
+	console.log(typeof str2);
+	console.log(typeof test); 
+	// công chuỗi/ nối chuỗi: +
+	var str3 = str1 + " def";
+	console.log(str3); // hello xanh def
+	// hiển thị sole chuỗi
+	var str4 = "hello 'xanh'";
+	console.log(str4); // hello 'xanh'
+	// +boolean: chỉ có 2 giá trị duy nhất là true hoặc false bắt buộc viết thường trong js
+	var is_male = true;
+	var is_female = false;
+	// console.log(typeof is_male); // bool - boolean
+	// var test = true;
+	//  -> kiểu number , string, boolean gọi kiểu dữ liệu nguyên thủy trong lập trình
+	// + undefined: kiểu ko xác định, xảy ra khi khai báo biến mà ko gán giá trị 
+	var	check;
+	console.log(typeof check); // undefined
+	// -> nên khai báo và gán giá trị luôn
+	var str = '';
+	var num = 0;
+	// + kiểu null: kiểu đặc biệt, khi thao tác với 1 đối tượng không tốn tại, 1 giá trị duy nhất = null
+	var x = null;
+	// + array: kiểu mảng, có thể lưu nhiều giá trị tại 1 thời điểm, các giá trị có thể là bất cứ kiểu dữ liệu nào
+	var names = [123, 'str', true, null, []]
+	// lưu tên của 500 ae
+	var per1 = 'abc';
+	var per2 = 'def';
+	var names = ['abc', 'def']
+	console.log(typeof names); // array ? object
+	// trong js, mảng được coi như 1 đối tượng
+	// + object: kiểu đôi tượng ( thuộc tính đối tượng) showname phương thức
+	var person = {
+		name: 'xanh',
+		age: 32,
+		showName: function () {
+			console.log('tên của bạn: ' + this.name)
+		}
+	}
+	//  4 - Hàm
+	// + Hàm là gì? 1 tập hợp các dòng code xử lý logic nào đó
+	// + Tính chất quan trọng nhất là sử dụng lại
+	// - Bài toán cộng 2 số ko viết hàm:
+	var number1 = 5;
+	var number2 = 7;
+	var sum = number1 + number2
+	console.log(sum);
+// -> thủ công và khó xử lý khi yêu cầu đầu vào thay đổi
+	// + Cú pháp khai báo
+	// function (là từ khóa) sau đó là dấu cách và tên hàmcùng (danh sách tham số) và dấu các thân hàm nơi viết code bao hàm bởi {}
+	function showName() {
+		console.log('hàm showName');
+	}
+	// + Gọi Hàm
+	showName();// hàm showName
+	// Khai báo hàm cần sử dụng hàm, nếu không thì xóa khai báo đi
+	// + phân loại hàm:
+	// - hàm có sẵn bởi ngôn ngữ
+	// - Hàm tự định nghĩa: có các dạng sau:
+	// + hàm không có tham số, ko có giá trị trả về
+	function showInfo(){
+		console.log('showInfo');
+	}
+	showInfo();
+	// + Hàm có tham số, ko có giá trị trả về:
+	// tham số là gì nó không phải là giá trị cụ thể, đại diện cho 1 giá tri nào đó
+	// viết hàm cộng hai số cần xd tham số
+	function total1(number1, number2) {
+		var total = number1 + number2;
+		console.log('Tổng = ' + total);
+	}
+	// gọi hàm là lúc cộng 2 số cụ thể nào
+	total1(1, 2);//3
+	var x = x + 3
+	total1(1, 3);
+	total1(4, 2);
+// + Hàm có tham số, có giá trị trả về
+	// xd tham số: 2 tham số 
+	//  xd kiểu dữ kiệu trả về của bài toán = giá trị trả về ->
+	function total2(number1, number2) {
+		var sum = number1 + number2;
+		// return là hàm trả về giá trị nào đó
+		// và cũng giúp thoát khỏi hàm
+		return sum;
+		// console.log('text test?'),
+	}
+	console.log('----------')
+	var sum1 = total2(10, 20); //tạo biến gán giá trị của hàm đó sum1 = 30
+	sum1 = sum1 + 123
+	console.log(sum1)
+	// viết hàm hiển thị tên của 1 ai đó theo cách 3
+	function showName2(qza) {
+		var ten1 = "tên của bạn: " + qza;
+		return ten1
+	}
+	var res1 = showName2('xanh');
+	console.log(res1);
+
+	function hoten(ho, ten){
+	var hoten = ho + ten;
+	return hoten
+}
+var hovaten = hoten('1', '2');
+console.log(hovaten);
+// hiển thị ra màn hình: document.write
+// debug: console.log
+// hiển thị họi thoại cảnh báo:
+// alert('hello');
+// lấy dữ liệu từ popup: prompt
+// var fullname = prompt('nhập tên của bạn:');
+// console.log(fullname);
+// + hiển thị hội thoại xác nhận: confirm
+// var is_confirm = confirm ('bạn có chắc muốn xóa?')
+// console.log(is_confirm);
+// + Hàm chuyển hướng
+// window.location = 'https://google.vn';
+// + mở trình gửi mail mặc định trên HDH: 
+// window.open('mailto:tangxuananh1995@gmail.com');
+// + Tìm kiếm chuỗi trong chuỗi:
+var	email = 'tangxuananh1995@gmail.com';
+var is_check = email.indexOf('@');
+console.log(is_check); // true >-1 là tìm thấy
+
+</script>

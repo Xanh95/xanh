@@ -2,6 +2,9 @@
 	<meta charset="utf-8" />
 	<head><title>bài tập về nhà javascript 2</title></head>
 	<body>
+		<h3>nhập số phút để chuyển sang đổi sang số giây</h3>
+		<input id="phut" type="number"></input>    
+		<button type="button" onclick="sogiay()">hiển thị giây</button>
 		<script>
 			// 1.	Viết hàm thực hiện tính tích của 3 số:
 			// VD: tích của 1, 2 ,3 = 6
@@ -12,18 +15,52 @@
 			tich(1,2,3);
 			// 2.2.	Viết hàm thực hiện tính toán trên 2 số bất kỳ, phép tính có thể là cộng trừ nhân chia.
 			 // VD: với 2 số 6 và 2, nếu phép tính là cộng thì kết quả bằng 8, nếu phép tính là trừ thì kết quả = 4, nếu phép tính bằng nhân thì kết quả  = 12, nếu kết quả bằng chia thì kết quả = 3
+			// Khai báo biến
 			var so1 = 2;
 			var so2 = 6;
+			// khai báo biến để xác định cách tính
 			var pheptinh = prompt('thực hiện phép tính giữa 2 và 6(+,-,*,/)');
+			// khai báo hàm
 			function cong(){
-				var tong = so1 + so2;
+				var tong = so2 + so1;
 				console.log('Tổng = '+ tong);
 				alert('Tổng = '+ tong);
 			}
+			function tru(){
+				var hieu = so2 - so1;
+				console.log('Hiệu = '+ hieu);
+				alert('Hiệu = '+ hieu);
+			}
+			function nhan(){
+				var tich1 = so2 * so1;
+				console.log('Tích = '+ tich1);
+				alert('Tích = '+ tich1);
+			}
+			function chia(){
+				var thuong = so2 / so1;
+				console.log('Thương = '+ thuong);
+				alert('Thương = '+ thuong);
+			}
 			switch (pheptinh){
 			case '+': cong(); break;
+			case '-': tru(); break;	
+			case '*': nhan(); break;
+			case '/': chia(); break;
+			default : console.log('không thể thực hiện'); alert('không thể thực hiện'); break;
+			}
+			// 3 Viết hàm chuyển đổi từ phút sang giây
+			// VD: cho phút = 2, thì kết quả số giây sẽ = 120
+			// Khai báo hàm
+			function sogiay(){
+				let sophut = document.getElementById('phut');// truy cập đến phần tử input qua Id
+				let giay = sophut.value * 60;
+				console.log(sophut.value);
+				console.log(giay);
+				alert(sophut.value + " phút bằng " + giay +"s");
+
 			}
 			
+
 
 		</script>
 	</body>

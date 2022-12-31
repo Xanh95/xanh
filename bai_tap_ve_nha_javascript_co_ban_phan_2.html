@@ -19,6 +19,12 @@
 		<input id="canhhinhvuong" type="number"></input>    
 		<button type="button" onclick="chuvihv()">chu vi hình vuông</button>    
 		<button type="button" onclick="dientichhv()">diện tích hình vuông</button>
+		<h3>nhập số cần kiểm tra</h3>
+		<input id="sokiemtra" type="number"></input>    
+		<button type="button" onclick="kiemtra()">kiểm tra số nguyên tố</button><button type="button" onclick="chanle()">kiểm tra chẵn lẻ</button> 
+		<h3>nhập số chuỗi</h3>
+		<input id="mang" type="string"></input>    
+		<button type="button" onclick="daonguoc()">Đảo Ngược Chuỗi</button>
 		<script>
 			// 1.	Viết hàm thực hiện tính tích của 3 số:
 			// VD: tích của 1, 2 ,3 = 6
@@ -115,6 +121,7 @@
 				console.log('diện tích của hình chữ nhật bằng : ' + dientichhv1);
 				alert('diện tích của hình chữ nhật bằng : ' + dientichhv1);
 			}
+			// 8.	Viết hàm tính diện tích hình vuông bất kỳ
 			function chuvihv(){
 				let canhhv = document.getElementById('canhhinhvuong');
 				let canhhv1 = canhhv.value * 1;
@@ -123,7 +130,79 @@
 				console.log('chu vi của hình vuông bằng : ' + chuvihv1);
 				alert('chu vi của hình vuông bằng : ' + chuvihv1);
 			}
+			// 9.	Viết hàm kiểm tra số nguyên tố (số nguyên tố là số chỉ chia hết cho 1 và chính nó)
+			function kiemtra() {
+				let numbercheck = document.getElementById('sokiemtra');
+				let numbercheck1 = numbercheck.value * 1;
+				let i = numbercheck1 / 2 - 0.5;	// lấy mốc bằng 1 nữa bỏ phần thập phân của số check
+				var flag =true;	// xác định là số nguyên tố hay là không bằng gán logic đúng hoặc sai vì else em thử thì nó chỉ dùng đc if k else được		
+				if (numbercheck1 < 2) {
+					flag =false;
+				} 
+				else if(numbercheck1 >= 2 && numbercheck1 <= 3 ) {
+					flag =true;				
+				}else if(numbercheck1 % 2 == 0){
+					flag =false;
+				}else{
+					for (var n = 3; n <= i ;n++ ){
+						if (numbercheck1 % n == 0){
+							flag =false; // tại sao cái này chỉ dùng được if k đc else anh nhỉ ?
+						}
+					}
+				} 					
+				if (flag == true){
+					console.log(numbercheck1 + " là số nguyên tố");
+					alert(numbercheck1 + " là số nguyên tố");
+				}
+				else{
+					console.log(numbercheck1 + " ko là số nguyên tố");
+					alert(numbercheck1 + " ko là số nguyên tố");
+				}		
+			}
+			// 10.	Viết hàm kiểm tra số là số chẵn hay lẻ
+			function chanle(){
+				let numbercheck = document.getElementById('sokiemtra');
+				let numbercheck1 = numbercheck.value * 1;
+				if (numbercheck1 % 2 == 0){
+					console.log(numbercheck1 + " là số chẵn");
+					alert(numbercheck1 + " là số chẵn");
+				}
+				else{
+					console.log(numbercheck1 + " là số lẻ");
+					alert(numbercheck1 + " là số lẻ");
+				}
+			}
+			// 11.	Viết hàm chuyển đổi giờ và phút sang giây 
+			// VD: 1h30p -> 3630 giây em chưa tìm được cách để tách số 1 thành 1 giờ và 30 thành 30 phút trong cuỗi có cả chữ và số
+			// 12.	Viết hàm đảo ngược vị trí của 1 chuỗi bất kỳ
+			function daonguoc(){
+				let mang1 = document.getElementById('mang');
+				let mangdn = mang1.value;
+				console.log(typeof mangdn);
+				console.log(mangdn);
+				let tachmang = mangdn.split(''); // tách chuỗi thành mảng
+				console.log('tach mang:' +tachmang);
+				let daonguocmt = tachmang.reverse(); // đảo ngược mảng đã tách
+				console.log(daonguocmt);
+				let mangdaonguoc = daonguocmt.join('');// ghép mạng đảo ngược đã tách
+				console.log(mangdaonguoc);
+				alert(mangdaonguoc);				
+			}
+			// Một số câu hỏi mong anh giải đáp ạ: 
+			// 1. tư duy lập trình là gì ạ, có phải cách tiếp nhận vấn đề và hướng giải quyết vấn đề đó hay không ạ?
+			// 2. Các bài tập a đưa để luyện kỹ năng và cũng luyện tập tư duy đúng không ạ? Và em lên mạng tìm, thì có rất nhiều bài tập. Nhưng nó khá hỗn tạp , không chia theo các cấp độ. Cũng k biết các bài phù hợp để dành cho người mới đầu chưa có kiến thức nền (em chỉ học lớp này của a là đầu tiên về lập trình).a có trang web nào để luyện riêng phần a chỉ em với ạ, vì em mới k biết theo trang web hay các bài tập ở đâu ạ
+			// ngoài các kiến thức a dạy trên lớp. em còn có thể tham khảm ở đâu, để chắc những kiến thức nền, còn  đi phỏng vấn khi người ta hỏi về (js hay css và php) có thể trả lời được hoặc có những gạch đầu dòng về những lý thuyết nào cần ôn trong các phần không ạ
+			// em 95 năm nay cũng 28 tuổi rồi, vậy để khi đi phỏng vấn thì em có thể nói như nào. Để nhà tuyển dụng có thể chấp nhận ạ? tuổi cũng không còn quá trẻ nữa :((
+			// Em thấy a chọn 1 bạn nào đó làm lơp trưởng để còn chia sẻ bớt việc tổ chức hay trao đổi các ý kiến với pdt. Để anh đỡ bớt việc và thời gian.
+			// Khi đi thực tập cần lưu ý những gì vd viết báo cáo hàng ngày hay cách tiếp cận giao tiếp với đồng nghiệp ở môi trường lập trình, và tiếp cận kiến thức từ công ty
+			// và công ty như nào thì nên gắn bó hoặc nên tránh
+			// còn rất nhiều câu hỏi về lập trình nhưng mà em chưa biết để mà hỏi. Chỉ có những câu hỏi mà em comment code trong bài rồi
+
+
+
+
 			</script>
+				
 			
 	</body>
 

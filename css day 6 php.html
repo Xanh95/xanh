@@ -1,0 +1,47 @@
+<!-- demo_css_1.html 
+- Ngôn ngữ css:
++ Là ngôn ngữ chuyên về markup trang web
++ Cascading Style Sheets
++ CSS dùng để markup cho HTML
++ Web responsive - là xu hướng thiết kế ưeb hiện nay, responsive là web hiển thị tương thích với mọi thiết bị: PC Ipad/Table Moblile - bắt buộc dùng CSS thì mới làm được
++có nhiều thư viện hỗ trị CSS: Bootstrap ...
++cps 2 version : CSS2 và CSS3
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo CSS phần 1</title>
+	<style type="text/css">
+		/*cú pháp khai báo CSS*/
+		/*-h1: selector, là đối tượng chịu tác động của CSS		*/
+		/*- color : attribute, là thuộc tính của CSS*/
+		/*-red: value tương ứng của attribute		*/
+
+		h1{
+			color: red;
+		}
+		/*các cách khai báo vùng làm việc với CSS: 
+		3 cách chính :
+			-inline trong thẻ html : dùng thuộc tính của style của thể
+
+			-inline trong file html : dùng cặp thẻ style
+
+			-External từ 1 file .css :  tạo 1 file main.html hiện tại đang code	tại thẻ head	*/
+			/* + đặc điểm của 3 cách trên :
+			- Thứ tự ưu tiên khi  cùng css cho 1 selector: inline thẻ -> inline file -> external css
+			-Hạn chế dùng kiểu inline, vì code về sau phức tạp
+			-ưu tiên dùng inline file vè external hơn inline file ko có tính sử dụng lại , ngược lại external sử dụng lại được
+			-trong thực tế luôn luôn ưu tiên dùng external css */
+	</style>
+	<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+	<style type="text/css"></style>
+	<p style="color: green;">thẻ P mặc định</p>
+	<h1>Thẻ H1 mặc định của HTML</h1>
+
+
+</body>
+</html>

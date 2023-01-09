@@ -1,0 +1,127 @@
+<!-- css_layout.html -->
+<!-- dựng layout với css -->
+<!-- 1- layout web là gì? là bố cục trang web dưới dạng hàng và cột
+2- lỹ thuật dụng layout web với css:
++cấu trúc table: không nên dùng vì cấu trúc html phức tạp và không linh hoạt khi responsive
++css possition : không nên dùng vì css phức tạp
++ css float : có thẻ dùng nhưng ko thể ưu tiên
++ css display: flex -> ưu tiên nhất vì dễ tạo cấu trức và responsive linh hoạt
+
++css display: grid -> có thể dùng tuy nhiên css hơi phức tạp
+-->
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		layout css
+	</title>
+</head>
+<body>
+	<style type="text/css">
+/*		không thể nào dựng được layout 1 hàng 3 cột từ 3 thẻ div này -> chuyển về dạng table hơajc sử dũng thuật css ở trên để dụng layout*/
+		#div1 {
+			background-color: red;
+		}
+		#div2 {
+			background-color: yellow;
+		}
+		#div3 {
+			background-color: blue;
+		}
+		#span1 {
+			background: yellow;
+		}
+		#a1 {
+			background: hotpink;
+		}
+		#float1{
+			background: yellow;
+    width: 33.33%;
+    float: left;
+		}
+		#float3{
+			background: orange;
+    width: 33.33%;
+    float: left;
+		}
+		#float2{
+			background: green;
+    width: 33.33%;
+    float: left;
+		}
+		li {
+    display: inline;
+}
+		.row{
+			display: flex;
+		}
+		.clo1 {
+			background: yellow;
+			width: 33.33%;
+    float: left;
+		}
+		.clo2 {
+			background: red;
+			width: 33.33%;
+    float: left;
+		}
+		.clo3 {
+			background: green;
+			width: 33.33%;
+    float: left;
+		}
+/*		thành phần inline à block
+		+ inline: chỉ chiếm vừa đủ nội dung nên có thể đứng ngang hàng
+		+ block chiếm hết 1 hàng nên không thể đứng chung với thành phần khác
+		+ một số thẻ block mặc định: div ,h ,p ,ul ,ol ...
+		+ một số inine mặc đinhk: span , a u i b ....;
+		+ để check cần set màu nền
+		+ có thể chuyển đổi linh hoạt kiểu hiển thị dựa vào css display */
+/*thay vì dùng inline thì dung inline-block*/
+/*tạo 1 cấu trúc layout với 1 hàng 3 cột băng nhau*/
+/*		- Dựng layout với css float
+		cần css float cho tất cả cột, sau đố set width $ tương ứng
+		float hay gây vỡ giao diện với phần tử ngay phía sau phần tử bị float cuối cùng*/
+/*		để fix cần tạo 1 đoạn html và thêm thuộc tính css sau để bỏ tính chất của float di: clear: both*/
+/*đảm bảo width trên 1 hàng đảm bảo 100%*/
+/*dựng layout viws flex*/
+/*bắt buộc phải toạ 1 cấu trúc dạng cha con mới dùng đc*/
+			.clear {
+				clear: both;
+			}
+/*			áp dụng display flex cho thành phần cha, sau đó set width% cho các thành phần con*/
+/*tiết kiệm công sức fix giao diện của float*/
+	</style>
+	<div class="row">
+		<div class="clo1">div 1 flex</div>
+		<div class="clo2">div 2 flex</div>
+		<div class="clo3">div 3 flex</div>
+
+	</div>
+	<div id="float1">dl1</div>
+	<div id="float3">dl3</div>
+	<div id="float2">dl2</div>
+	<div class="clear"></div>
+	<ul>
+		<li>
+			<a href="#">link1</a>
+		</li>
+		<li>
+			<a href="#">link2</a>
+		</li>
+		<li>
+			<a href="#">link3</a>
+		</li>
+
+	</ul>
+<div id="div1">div 1</div>
+<div id="div2">div 2</div>
+<div id="div3">div 3</div>
+<span id="span1">span1</span>
+<a href="" id="a1">a1</a>
+
+</body>
+</html>

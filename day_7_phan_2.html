@@ -1,0 +1,110 @@
+<!-- day_7_phần_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Các thuộc tính CSS cơ bản</title>
+</head>
+<body>
+	<style type="text/css">
+/*		Background*/
+		#p-bg {
+			background-color: #dd1313;
+	    background-repeat: repeat;
+/*	    background-image: url(avata.jpg);*/
+/*	    height: 400px;*/
+	    background-position: center;
+	    background: #5f1515 url(avata.jpg) no-repeat center;
+		}
+/*		dùng devtool của chrome để css trực tiếp*/
+/*		inspect ở trang web */
+/*copy ảnh bất kỳ ngang hàng với file .html*/
+/*CSS gộp:*/
+/*2 - font*/
+.span-font {
+    font-family: Arial;
+}
+#h1-text {
+    color: palegoldenrod;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 3px red;
+    line-height: 40px;
+}
+/*		4 border*/
+#p-border {
+    border-color: blue;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    border: 5px sloid blue;
+}
+/*5 - margin khoảng cách giữa cách đối tượng liền kề nhau*/
+	#div1{
+		background: red;
+		width: 100px;
+		height: 100px;
+	}
+	#div2{
+		background: yellow;
+		width: 100px;
+		height: 100px;
+		margin: 10px 5px 10px 10px;
+	}
+/*	margin gộp*/
+/*	margin: top right bottom left;
+	margin: top-bottom left-right	*/
+/*	margin: top-bottom-left-right*/
+/*6-padding:*/
+/*khoảng cách từ viền đến bên trong*/
+/*gộp gióng margin*/
+/*7 position: di chuyển phần tử mà không ảnh hưởng đến các phần tử xung quanh*/
+/*fixed:vị trí cố định khi cuộn trang dùng body để căn*/
+/*relative lấy chính vị trí của nó để căn*/
+/*absolute */
+
+#pos1 {
+	background: blue;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+#pos2 {
+	background: red;
+	width: 50px;
+	height: 50px;
+}
+	#parent {
+		background: pink;
+		width: 150px;
+		height: 150px;
+		position: relative;
+/*		cha la relative*/
+	}
+	#child {
+		background: blue;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+/*		con la absolute*/
+	}
+
+	</style>
+	<div id="pos1">div1 pos</div>
+	<div id="pos2">div2 pos</div>
+	<div id=parent>
+		<div id=child>div con</div>
+	</div>
+	<p id="p-padding">P padding</p>
+	<div id="div1">div1</div>
+	<div id="div2">div2</div>
+	<p id="p-border">p boder</p>
+	<h1 id="h1-text">H1 text</h1>
+	<span class="span-font">thẻ span</span>
+	<p id="p-bg">thẻ p</p>
+</body>
+</html>

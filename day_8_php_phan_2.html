@@ -1,0 +1,78 @@
+<!-- day_8_php_phan_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo Layout</title>
+
+</head>
+<body>
+<!-- Các Bước code giao diện:
+	+ dựng html xong rồi mới css
+	+ dựng html cần phân tích bố cục trang web trước, để chia các hàng cột theo hướng từ trên xuống
+	+ 1 hàng nếu có từ 2 cột trở lên, thì áp dụng cấu trúc cha con để sử dụng flex -->
+	<style>
+		.container {
+    border: 2px solid black;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+}
+.hear {
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.main-content {
+    margin-bottom: 10px;
+}
+.row {
+    display: flex;
+}
+.sidebar {
+    border: 2px solid black;
+    width: 20%;
+    text-align: center;
+    padding: 15px 0;
+}
+.sidebar {
+    border: 2px solid black;
+    width: 20%;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.content {
+    border: 2px solid black;
+    width: 80%;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer {
+	border: 2px solid black;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+	</style>
+	<div class="container">
+		<div class="hear">header</div>
+		<div class="main-content">
+			<div class="row"> 
+				<div class="sidebar">sidebar</div>
+				<div class="content">content</div>
+		</div>
+		<div class="footer">footer</div>
+	</div>
+</body>
+</html>

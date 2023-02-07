@@ -1,0 +1,70 @@
+<!-- event_submit.html
+- Sự kiện submit: xảy ra khi subit form/ gửi thông tin từ form lên
+Hành động submit thực hiện theo 2 cách: click vào nút submit, đứng trong input và enter
+sự kiện submit chỉ áp dụng trên thẻ form  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo sự kiện submit</title>
+</head>
+<body>
+    <form action="" method="post" id="form-test">
+        nhập tên: <input type="text" id="fullname"> <br>
+        nhập tuổi <input type="text" id="age"> <br>
+        <input type="submit" value="hiển thị">
+    </form>
+    <h3 id="error" style="color :red"></h3>
+    <h3 id="result" style="color :green"></h3>
+    <script>
+        // b1:
+        var obj_form = document.querySelector('#form-test')
+        // b2:
+        obj_form.addEventListener('submit', function(){
+            // alert('form dc submit');
+            // quy trình xử lý form:
+            // -b1 : tạo biến chứa lỗi và kết quả:
+            var error = ('');
+            var result = ('')
+            // -b2 : lấy các giá trị từ form:
+            // tên: 
+            var obj_fullname = document.querySelector('#fullname')
+            var fullname = obj_fullname.value;
+            // tuổi
+            var obj_age = document.querySelector('#age')
+            var age = obj_age.value;
+            // - b3 : validate form: kiểm tra dữ liệu nhập để loại bỏ các dữ liệu vô nghĩa, giúp bảo mật form hơn
+            // tên và tuỏi ko được để trống: so sánh với chuỗi rỗng
+            // tên > 3 ký tự .length
+            // tuổi phải là số isNaN -is Not a Number
+            // khi mà có lỗi validate, gán cho viên error ở b1
+            if (fullname == '' || age == '') {
+                error = 'teen tuổi ko được để trống';
+                obj_fullname.focus();
+            } else if (fullname.lenght < 3) {
+                error = 'tên phải lớn hơn 3 ký tự';
+            } else if (isNaN(age)) {
+                error = 'tuổi phải là số';
+            }
+            // -b4 xử lý logic chính (hiển thị thông tin) chỉ khi ko có lỗi nào xảy ra
+            // gán kết quả cho biến result 
+            if (error == '') {
+                result += "tên: " + fullname;
+                result += "<br> tuổi: " + age;
+            }
+            // -b5 đổ thông tin error và result ra form, tạo sẵn 
+            // 2 thẻ html ko có nội dung đổ vào
+            document.querySelector('#error').innerHTML = error;
+            document.querySelector('#result').innerHTML = result;
+            // setting giữ lại log khi code js
+            // do khi submit form gửi sẽ tải lại trang nên các thông tin trước đó sẽ mất hết, để giữ lại được các thông tin này
+            //  cần để ngăn ngừa hành vi tải lại trang này
+            // obj event chỉ có sẵn bên trong trang này
+            event.preventDefault();
+
+        })
+    </script>
+</body>
+</html>

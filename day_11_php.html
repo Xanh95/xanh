@@ -1,0 +1,90 @@
+<!-- day_11_php -->
+<!-- các kiến thức chung lập trình -->
+<!-- cách dùng js tương tác với html -->
+<!-- thông qua các sự kiện html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 11 php js(event)</title>
+</head>
+<body>
+    <!-- gắn trực tiếp sự kiện thông qua thuộc tính của thẻ -->
+    <h2 onclick="alert('clicked')">click để sau cảnh báo</h2> 
+    <h3 id="h3-click">sds</h3>
+    <script>
+        // viết js tương tác tách biệt html dễ đọc
+        // bước 1 lấy đối tượng /selector muốn tương tác
+        var obj_h3 = document.querySelector('#h3-click');
+        console.log(obj_h3);
+        //  gắn sự kiện mong muốn cho obj b1
+        // hàm call back: dùng để thực thi hành động nào đó sau khi sự kiện trc nó xảy ra xong
+        obj_h3.addEventListener('click', function(){
+            // code js bên trong hàm call back
+            alert('ádasdasd')
+        });
+        // các sự kiện cơ bản trong js
+        // -click: xảy ra khi click 1 selector
+    </script>
+    <select name="" id="country">
+        <option value="jp">Japan</option>
+        <option value="vn">vietnam</option>
+        <option value="kr">korea</option>
+    </select>
+    <a class="a-test">hover để đổi màu thẻ a</a>
+    <input type="text" id="input-test">
+    <script>
+        // gọi sự kiện load của windown:
+        window.addEventListener('load', function () {
+            var obj_h4 = document.querySelector('#h4-test');
+            obj_h4.addEventListener('click', function(){
+                alert('click h4');
+            })
+
+        })
+    </script>
+    
+    <h4 id="h4-test">click h4 để show cảnh báo</h4>
+
+    <script>
+        // các sự kiện cơ bản trong js
+        // - load: 
+        // - blur vaf focus: dùng cho các input
+        // blur: ko ở trong input, focus: dang ở trong input
+        // keyup and keydown: áp dụng cho các input, thời điểm nhấn phím trên bàn , keyup và nhả ra 
+        var obj_input = document.querySelector('#input-test');
+        obj_input.addEventListener('keyup', function(){
+            console.log('keyup: '+this.value);
+        })
+        // var obj_input = document.querySelector('#input-test');
+        // obj_input.addEventListener('keydown', function(){
+        //     console.log('keydown: '+this.value);
+        // })
+        // keydown: nhấn phím
+        // - mouseenter và mouseleave: xảy ra khi rê chuột qua phần tử html bất kỳ
+            // B1:
+            var obj_a = document.querySelector('.a-test');
+            // B2: gawns mouseenter: trạng thái hover, mouseleave: ngược lại hover
+            obj_a.addEventListener('mouseenter', function(){
+                this.style = 'color: red';
+            })
+            obj_a.addEventListener('mouseleave', function(){
+                this.style = 'color: black';
+            })
+        // - change: xảy ra khi giá trị thay đổi, áp dụng cho thẻ select, radio , check box
+        // b1:
+        var obj_country = document.querySelector('#country');
+        // b2:
+        obj_country.addEventListener('change', function(){
+            // lấy giá trị thuộc value:
+            var option_val = this.value;
+            // alert(option_val);
+            var content = this.options[this.selectedIndex].text;
+            alert(content);
+        })
+        // - click: xảy ra khi click 1 slector
+    </script>
+</body>
+</html>

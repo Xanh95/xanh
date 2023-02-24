@@ -56,3 +56,10 @@ body {
     margin-left: 7%;
     margin-bottom: 100px;
 }
+.active {
+    background-color: #fff;
+    color: black !important;
+}
+ul {
+    padding-left: 0;
+}

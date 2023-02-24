@@ -1,0 +1,69 @@
+@media (max-width: 767px){
+    img{
+        display: none !important;
+    }
+}
+.index {
+    margin: auto;
+    width: 80%;
+    background-color: white;
+}
+img {
+    width: 20%;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+}
+li {
+    display: inline-block;
+    color: white;
+}
+ul {
+    padding-left: 25px;
+}
+body {
+    background-color: #007E01;
+}
+nav {
+    background-color: black;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+.active {
+    color: black;
+    background-color: white;
+}
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.text-center {
+    display: block;
+    text-align: center;
+}
+.paragraph {
+    margin-left: 20%;
+}
+main {
+    height: 500px;
+}
+.color-input {
+    color: #E8F0FE;
+}
+input {
+    margin-left: 20%;
+}
+form {
+    margin-left: 10%;
+    margin-top: 50px;
+}

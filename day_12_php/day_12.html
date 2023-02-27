@@ -1,0 +1,71 @@
+<!--  thư viện jquery
+    + là thư viện hỗ trợ tương tác với html đơn giản hơn
+    sơ với dùng js thuần 
+    + Cài đặt :
+    - Thủ công: 
+    - Link Cdn -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo jquery</title>
+        <!-- nhúng jquery link cnd -->
+        <!--  nguyên tác chung khi sử dụng 1 thư viện bất kỳ : không được chỉnh sửa source code của nó, nếu muốn sửa phải tạo module riêng base code của nó -->
+        <!-- hàm call back sẽ được gọi sau khi thực hiện xong 1 hành động -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <form action="" id="form-login" method="post">
+            user name:
+            <input type="text" id="username">
+            pass word:
+            <input type="password" id="password">
+            <button type="submit">alsdhalsdhlaskdl</button>
+            <h3 id="error" style="color :red"></h3>
+            <h3 id="result" style="color :green"></h3>
+        </form>
+        <script>
+            // ký tự đặc trưng của jquery
+            // trang web khi load hết html css -> sẵn sàng , thì code js mới được chạy
+            $(document).ready(function(){
+                var obj_form = $('#form-login');
+                console.log(obj_form);
+                // obj cuar jquery khacs hoàn toàn so với obj của js thuần
+                // -> 2 obj này sẽ dùng các hàm khác nhau
+                //  gắn sự kiện cho obj trên  -> module event
+                obj_form.submit(function(){
+                    // alert('submit');
+                    //  khai báo biến chứa lỗi và kết quả
+                    var error = '';
+                    var result = '';
+                    //  lấy giá trị của 2 input: dùng module attribute
+                    // riêng với input sẽ dùng hàm val
+                    var username = $('#username').val();
+                    var password = $('#password').val();
+                    // alert(username);
+                    // validate:
+                    if (!username || !password){
+                        error = 'phai nhap'
+                    }
+                    // xử lý logic đăng nhập chỉ khi ko có lỗi nào xảy
+                    if (error == ''){
+                        if (password == '123'){
+                            result = 'dang nhap thanh cong';
+                        } else {
+                            error = 'sai tai khoan hoac mk';
+                        }
+                    }
+                    // đổ error và result ra form:
+                    // alert(password);
+                    $('#error').html(error);
+                    $('#result').html(result);
+                    event.preventDefault();
+                })
+
+            })
+        </script>
+    </body>
+    </html>
+    

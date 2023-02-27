@@ -1,0 +1,57 @@
+<!-- thư viện validate theo kiểu realtime -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>bai tap</title>
+
+</head>
+<body>
+  <form id='form-test'>
+    nhập số hàng:
+    <input type="text" name="" id="row">
+    <br>
+    <input type="submit" value="hieenr thij">
+       
+  </form>
+  <h3 style="color: red;" id="error"></h3>
+  <h3 style="color: green;" id="result"></h3>
+  <script>
+    $(document).ready(function() {
+        $('#form-test').submit(function(){
+          var error = '';
+          var result = '';
+            // lấy số hàng:
+            var row = $('#row').val();
+            // alert(row);
+            // validate:
+            if (row == '') {
+              error = 'phải nhập số hàng';
+            } else if (isNaN(row)){
+              error = 'phair laf so'
+            }
+            // xử lý logic chính khi ko có lỗi xảy ra 
+            if (error == '') {
+              // - tư duy: thử nhiều giá trị khác nhau để tìm ra quy luật
+              //  lặp từ 1 đến row (row = 5)
+              for (var i = 1; i <= row; i++){
+                // trong mỗi vòng lặp, lặp để hiển thị số ký tự *
+                for (var j = 1; j <= i; j++){
+                  result += '*';
+                }
+                // hiển thị hết 1 hàng thì xuống dòng
+                result += '<br>';
+              }
+            }
+            $('#error').html(error);
+            $('#result').html(result);
+            event.preventDefault();
+        })
+    })
+  </script>
+</body>
+</html>

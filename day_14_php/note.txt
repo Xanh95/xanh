@@ -1,0 +1,32 @@
+1 - phpstorm
++ ide code phổ biến nhất hiện nay
++ mất ohis, crack, tham khảo file
+Cai_dat_ide_php_storm_2021.1.x.docx
++khá nặng, tuỳ sở thích cá nhân thì có thể dùng visual code, subline ... thay thế
++ một số phím tắt, tham khảo file
+2- xampp:
+http://localhost
+3- tổng quan về php
++ môi trường phát triển web php : để code php viết ra chạy đc trên trình duyêt, thì bắt buộc phải cài môi trường phát triển
++ bao gồm 3 thành phần chính:
+webserver: nơi lưu trữ website, apache và nginx
+php engnie: đọc code php
+database: lưu trữ dữ liệu tạo ra các website tĩnh
+web động : thay đổi dữ liệu thông qua giao diện quản trị
+web tĩnh : không lưu lại dữ liệu (htm css js)
+-> cài thủ công 3 thành phần khá phức tạp
+dùng khi học tập, thực tế  ưu tiên dùng docker , laravel -> laradock
++ mô hình clint - sever
+với lập trình web = trình duyệt, server = php
++ php là gì
+-hypertext preprocessor:
+- là ngôn ngữ lập trình backend chuyên dùng để xây dựng website
+- thông qua cơ chế api hoàn toàn có thể dựng các ứng dụng game , mobile, desktop
+- có rất nhiều phiên bản 8.x
+- cộng đồng hỗ trợ lớn, thư viện phong phú
+- sử dụng được viết trong 1 file có đuôi .php
++ cách chạy code php với phần mền xampp:
+- source code php viết ra bắt buộc phải đặt trong thư mục cài xampp:
+c:/xampp/htdocs
+- bắt buộc phải mở control panel xampp, start module apache
+cd dùng phpstorm tạo  project -> new project

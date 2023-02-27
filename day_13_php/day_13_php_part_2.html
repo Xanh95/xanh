@@ -1,0 +1,58 @@
+<!-- thư viện validate theo kiểu realtime -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Thư viện jquery validate</title>
+
+</head>
+<body>
+    <!-- thư viện validate theo thuộc tính name của input -->
+    <form id="form-info">
+        Nhập tên:
+        <input type="text" name="fullname" id="">
+        <br>
+        nhập tuổi:
+        <input type="text" name="age" id="">
+        <br>
+        nhập email:
+        <input type="text" name="email" id="">
+        <br>
+        <input type="submit" value="Check validate">
+
+    </form>
+    <script>
+        $(document).ready(function(){
+            var obj_validate = {
+                rules: {
+                    fullname:{
+                        required: true,
+                        minlength: 3
+                    },
+                    age: {
+                        required: true,
+                        number: true,
+                        max: 127
+                    },
+                    email: {
+                        email:true,
+                    }
+                },
+                messages:{
+                    fullname: {
+                        required: 'phải nhập tên',
+                        minlength: 'tên >= 3 lý tự',
+                    }
+                }
+            };
+            // gọi thư viện jquery validate trên obj form
+            $('#form-info').validate(obj_validate);
+        })
+    </script>
+    
+</body>
+</html>

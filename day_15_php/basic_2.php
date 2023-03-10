@@ -108,7 +108,7 @@ if ($number > 0){
 <?php elseif (4 > 0): ?>
 <?php elseif (3 > 0): ?>
 <?php else: ?>
-<?php endif; ?>
+<?php endif: ?>
 <?php
 // 7- vòng lặp
 //for while do ... while

@@ -13,3 +13,4 @@ echo array_sum($arrs);
 $names = ['a','b','c'];
 $check = isset ($names[4]);//false
 // -Tham khảo các silde còn lại
+?>

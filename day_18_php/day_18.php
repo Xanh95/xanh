@@ -31,28 +31,28 @@ if (isset($_POST['upload'])){
             // -file upload ko được lớn hơn 2mb
             $size_b = $avatar['size'];
             $size_mb = $size_b/ 1024 / 1024;
-            if (size_mb > 2) {
+            if ($size_mb > 2) {
                 $error = 'file upload ko được lớn 2mb';
 
             }
             // b6 xử lý khi không có lỗi
-            if (empty($error)) {
-                // xử lý file vào thư mục chỉ định
-                $filename = '';
-                if ($avatar['error'] == 0) {
-                    $dir_upload = 'uploads';
-                    // tạo thư mục uploads trên bằng code, ko được tạo bằng tay
-                    // chỉ tạo khi thư mục đó chưa tồn tại : file_exists
-                    if (!file_exists($dir_upload)) {
-                        mkdir($dir_upload);
-                    }
-                    // tạo file mang tính duy nhất:
-                    $filename = time() . '' . $avatar['name'];
-                    // tải file lên hệ thống
-                    $is_upload = move_uploaded_file($avatar['tmp_name'],"$dir_upload/$filename");
-                    var_dump($is_upload);
-                    $result .= "<img src='$dir_upload/$filename' height='50px' >";
+        }
+        if (empty($error)) {
+            // xử lý file vào thư mục chỉ định
+            $filename = '';
+            if ($avatar['error'] == 0) {
+                $dir_upload = 'uploads';
+                // tạo thư mục uploads trên bằng code, ko được tạo bằng tay
+                // chỉ tạo khi thư mục đó chưa tồn tại : file_exists
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload);
                 }
+                // tạo file mang tính duy nhất:
+                $filename = time() . '' . $avatar['name'];
+                // tải file lên hệ thống
+                $is_upload = move_uploaded_file($avatar['tmp_name'],"$dir_upload/$filename");
+                var_dump($is_upload);
+                $result .= "<img src='$dir_upload/$filename' height='50px' >";
             }
         }
         

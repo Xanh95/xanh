@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
     // - không được để trống username/password
     // - username phải là email
     if (empty($username || empty($password))) {
-        $error = 'không được để trống user name/mật khẩu';
+        $error = 'không được để trống user  name/mật khẩu';
     } elseif (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
         $error = 'username phải là email';
     }

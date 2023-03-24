@@ -38,4 +38,5 @@ khoá chính thường được đặt tên là id có cơ chế tự động t�
 -Foreign key: khoá ngoại là 1 trường trong bảng nhưng là khoá chính của bảng có liên kết
 4. học sql để tương tác với csdl thông qua giao diện của phpmyadmin
 truy cập phpadmin, click vào tabsql để bắt đầu viết truy vấn
+
  -->
